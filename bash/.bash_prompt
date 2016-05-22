@@ -1,0 +1,34 @@
+source /usr/share/git/completion/git-prompt.sh
+
+# Aliasing for making PS1 readeable
+
+# Colors
+BoldRed="\[\033[1;31m\]"
+Blue="\[\033[0;34m\]"
+BoldBlue="\[\033[1;34m\]"
+BoldYellow="\[\033[1;33m\]"
+ColorOff="\[\033[0m\]"
+
+# Smiley
+Happy="^_^ "
+Sad="o_O "
+Happy_c="$BoldBlue$Happy$ColorOff"
+Sad_c="$BoldRed$Sad$ColorOff"
+Smiley="\`if [ \$? = 0 ]; then echo \"$Happy_c\"; else echo \"$Sad_c\";fi\`"
+
+# Host info
+Host="\u@\h "
+Host_c="$Blue$Host$ColorOff"
+Where="\w "
+Where_c="$BoldYellow$Where$ColorOff"
+WhereIAm="$Host_c$Where_c"
+
+# Git info
+GitInfo="\$(__git_ps1 '(%s)')"
+GitInfo_c="$BoldBlue$GitInfo$ColorOff"
+
+# CommandPrompt
+CmdPrompt="\n$ "
+CmdPrompt_c="$BoldBlue$CmdPrompt$ColorOff"
+
+export PS1="$Smiley$WhereIAm$GitInfo_c$CmdPrompt_c"

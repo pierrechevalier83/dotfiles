@@ -1,0 +1,12 @@
+export RUST_SRC_PATH="$HOME/Developer/rust-master/src/"
+
+export ANDROID_NDK="/run/media/pierrec/SD card/android/ndk/android-ndk-r11c"
+export ANDROID_SDK="/run/media/pierrec/SD card/android/sdk/android-sdk-linux"
+export ANDROID_TOOLCHAIN="$ANDROID_NDK"
+
+export PATH="$PATH:$ANDROID_TOOLCHAIN/bin:$ANDROID_NDK/bin:$HOME/bin"
+
+export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
+
+source $HOME/.cargo/env
+
