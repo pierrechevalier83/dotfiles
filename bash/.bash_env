@@ -8,5 +8,7 @@ export PATH="$PATH:$ANDROID_TOOLCHAIN/bin:$ANDROID_NDK/bin:$HOME/bin"
 
 export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig
 
-source $HOME/.cargo/env
+export CARGO_HOME=$HOME/.cargo
 
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
