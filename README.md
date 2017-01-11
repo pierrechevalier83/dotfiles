@@ -15,6 +15,7 @@ cd dotfiles
 stow compton
 stow conky
 stow xorg
+stow termite
 ...
 ```
 
