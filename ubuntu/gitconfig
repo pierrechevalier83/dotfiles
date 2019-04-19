@@ -1,0 +1,10 @@
+[user]
+	email = pierrechevalier83@gmail.com
+	name = Pierre Chevalier
+[core]
+	editor = nvim
+[alias]
+	logo = log --oneline --graph --decorate
+	loga = log --oneline --graph --decorate --all
+[rebase]
+	autosquash = true
