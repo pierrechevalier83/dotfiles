@@ -11,14 +11,12 @@ source  /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 # Enable syntax highlighting and autosuggestions
 # sudo apt install zsh-syntax-highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# sudo apt install zsh-autosuggestions
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Fuzzy finder
 export FZF_DEFAULT_OPTS='--height 20% --reverse --border'
-# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+# sudo apt install fzf
 
 # Enable completions
 autoload -Uz compinit
