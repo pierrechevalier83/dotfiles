@@ -16,6 +16,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 
 " general settings
@@ -35,6 +36,12 @@ set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
 set laststatus=2
 set clipboard=unnamedplus
+set nocompatible
+filetype plugin on
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " airline
 let g:airline_powerline_fonts = 1
