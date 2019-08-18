@@ -1,13 +1,15 @@
 export TERM="xterm-256color"
 
+# git clone https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 bindkey -e
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 bindkey "[b" backward-word
 bindkey "[f" forward-word
-
-# git clone https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # Enable syntax highlighting and autosuggestions
 # brew install zsh-syntax-highlighting
@@ -42,7 +44,6 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # Rust specific config
+export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=$PATH:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
