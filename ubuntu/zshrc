@@ -8,8 +8,12 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 bindkey -e
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
-bindkey "[b" backward-word
-bindkey "[f" forward-word
+# ctrl-Left, ctrl-Right
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+# alt-Left, alt-Right
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
 
 
 # Enable syntax highlighting and autosuggestions
