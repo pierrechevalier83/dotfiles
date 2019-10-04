@@ -1,0 +1,8 @@
+font=Hack Nerd Font Mono 12
+
+[warning]
+background=cb4b16
+button-background=eee8d5
+border=002b36
+border-bottom=268bd2
+text=002b36
