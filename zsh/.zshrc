@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export TERM="xterm-256color"
 
 # sudo yay -Ss zsh-theme-powerlevel10k
@@ -38,11 +45,11 @@ setopt sharehistory
 setopt incappendhistory
 
 # Aliases
-# cargo install exa
+# sudo pacman -S exa
 alias ls=exa
-# cargo install bat
+# sudo pacman -S bat
 alias cat=bat
-# cargo install ripgrep
+# sudo pacman -S ripgrep
 alias grep=rg
 
 # sudo pacman -S neovim
@@ -54,4 +61,3 @@ export VISUAL=nvim
 # Rust specific config
 export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/usr/local/bin
-
