@@ -53,5 +53,5 @@ export VISUAL=nvim
 
 # Rust specific config
 export LD_LIBRARY_PATH=/usr/local/lib
-export PATH=$PATH:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin
+export PATH=$PATH:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/usr/local/bin
 

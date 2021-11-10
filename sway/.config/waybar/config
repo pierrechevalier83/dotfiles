@@ -11,7 +11,7 @@
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
-         "format": "{icon}"
+         "format": "{icon}",
 //         "format-icons": {
 //			"0": " ",
 //			"1": "",
@@ -20,14 +20,14 @@
 //			"4": "",
 //			"5": ""
 //		 },
-//	     "persistant_workspaces": {
-//		     "0": [],
-//		     "1": [],
-//		     "2": [],
-//		     "3": [],
-//		     "4": [],
-//		     "5": []
-//         }
+	     "persistant_workspaces": {
+		     "0": [],
+		     "1": [],
+		     "2": [],
+		     "3": [],
+		     "4": [],
+		     "5": []
+         }
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
