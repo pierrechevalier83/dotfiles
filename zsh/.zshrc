@@ -55,6 +55,12 @@ alias grep=rg
 # sudo pacman -S neovim
 alias vim=nvim
 
+# sudo pacman -S taskwarrior-tui
+alias tt=taskwarrior-tui
+
+#sudo pacman -S taskd
+export TASKDDATA=/var/lib/taskd
+
 export EDITOR=nvim
 export VISUAL=nvim
 
