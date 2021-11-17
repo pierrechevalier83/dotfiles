@@ -11,6 +11,7 @@
 
 "alacritty" = ""
 "termite" = ""
+"kitty" = ""
 "github" = ""
 "rust" = ""
 "google" = ""
@@ -31,5 +32,7 @@
 "music" = ""
 "disk usage" = ""
 ".pdf" = ""
+"spotify" = ""
+"gnome" = ""
 [other]
 "fallback_icon" = "🤨"
