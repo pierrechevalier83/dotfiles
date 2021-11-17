@@ -58,6 +58,8 @@ alias vim=nvim
 # sudo pacman -S taskwarrior-tui
 alias tt=taskwarrior-tui
 
+alias cdcode="cd ~/Documents/code/"
+
 #sudo pacman -S taskd
 export TASKDDATA=/var/lib/taskd
 
