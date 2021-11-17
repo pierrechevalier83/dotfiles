@@ -19,6 +19,7 @@
 "firefox" = ""
 "chrome" = ""
 "file manager" = ""
+"nautilus" = ""
 "libreoffice calc" = ""
 "libreoffice writer" = ""
 "libreoffice" = ""
@@ -34,5 +35,8 @@
 ".pdf" = ""
 "spotify" = ""
 "gnome" = ""
+"discord" = ""
+"bitwarden" = ""
+"steam" = ""
 [other]
 "fallback_icon" = "🤨"
