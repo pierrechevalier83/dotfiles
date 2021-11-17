@@ -1,0 +1,52 @@
+[theme]
+name = "solarized-dark"
+[theme.overrides]
+alternating_tint_bg = "#11111100"
+alternating_tint_fg = "#11111100"
+
+[icons]
+name = "awesome"
+
+[[block]]
+block = "bluetooth"
+mac = "4C:87:5D:27:C9:E9"
+hide_disconnected = true
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "networkmanager"
+on_click = "alacritty -t menu -e nmtui"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+ap_format = "{ssid^10} {strength}"
+device_format = "{icon}{ap}"
+
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+
+[[block]]
+block = "backlight"
+device = "amdgpu_bl0"
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+
+[[block]]
+block = "notify"
+
