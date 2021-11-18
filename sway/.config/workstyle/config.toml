@@ -38,5 +38,6 @@
 "discord" = ""
 "bitwarden" = ""
 "steam" = ""
+"snapper" = ""
 [other]
 "fallback_icon" = "🤨"
