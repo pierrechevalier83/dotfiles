@@ -25,7 +25,17 @@ set $right l
 set $term "alacritty"
 set $browser "firefox"
 # Your preferred screenlocker
-set $lock "swaylock -i ~/Pictures/wallpaper.jpg"
+set $lock "swayidle \
+		       timeout 10 'swaymsg output \* dpms off' \
+               resume     'swaymsg output \* dpms on ' &\
+		   swaylock -i ~/Pictures/wallpaper.jpg && \
+		   kill -TERM $! && \
+		   wait"
+#exec swayidle -w \
+#         timeout 1800 'swaylock -f -c 000000' \
+#         timeout 600 'swaymsg "output * dpms off"' \
+#              resume 'swaymsg "output * dpms on"' \
+#         before-sleep 'swaylock -f -c 000000'
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu FZF_DEFAULT_OPTS='--height 100% --reverse --border' alacritty -t menu -e bash -c 'dmenu_path | fzf | xargs -r swaymsg -t command exec', for_window [title="menu"] border pixel 0, for_window [title="menu"] floating enable, for_window [title=menu] move absolute position 0 30
@@ -80,7 +90,7 @@ output $samsung resolution 2560x1440 position 1920,-360
 # Example configuration:
 #
 #exec swayidle -w \
-#         timeout 300 'swaylock -f -c 000000' \
+#         timeout 1800 'swaylock -f -c 000000' \
 #         timeout 600 'swaymsg "output * dpms off"' \
 #              resume 'swaymsg "output * dpms on"' \
 #         before-sleep 'swaylock -f -c 000000'
@@ -187,7 +197,6 @@ input type:keyboard {
 #
 	# Start with workspace 1
 	workspace 1
-	workspace +
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -345,10 +354,12 @@ set $cyan      #2aa198
 set $green     #859900
 
 bar {
-    font Hack Mono, FontAwesome 12
+    height 20
+    font Hack Nerd Font 12
     position top
     status_command i3status-rs
-    colors {
+	pango_markup disabled
+	colors {
         separator $border_focused
         background $bg_neutral
         statusline #dddddd
@@ -359,9 +370,6 @@ bar {
         urgent_workspace $orange$theme_alpha $orange$theme_alpha $text_color
     }
 }
-#bar {
-#    swaybar_command waybar
-#}
 
 #
 # Notification Area:
