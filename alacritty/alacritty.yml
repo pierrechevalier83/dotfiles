@@ -172,35 +172,35 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Solarized Dark)
+      # Colors (Nord)
 colors:
-  bright:
-    black: '#475b62'
-    blue: '#708284'
-    cyan: '#819090'
-    green: '#475b62'
-    magenta: '#5956ba'
-    red: '#bd3613'
-    white: '#fcf4dc'
-    yellow: '#536870'
-  cursor:
-    cursor: '#708284'
-    text: '#002831'
-  normal:
-    black: '#002831'
-    blue: '#2176c7'
-    cyan: '#259286'
-    green: '#738a05'
-    magenta: '#c61c6f'
-    red: '#d11c24'
-    white: '#eae3cb'
-    yellow: '#a57706'
+  # Default colors
   primary:
-    background: '#001e27'
-    foreground: '#708284'
-  selection:
-    background: '#002831'
-    text: '#819090'
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+
+  # Normal colors
+  normal:
+    black:   '0x3B4252'
+    red:     '0xBF616A'
+    green:   '0xA3BE8C'
+    yellow:  '0xEBCB8B'
+    blue:    '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan:    '0x88C0D0'
+    white:   '0xE5E9F0'
+
+  # Bright colors
+  bright:
+    black:   '0x4C566A'
+    red:     '0xBF616A'
+    green:   '0xA3BE8C'
+    yellow:  '0xEBCB8B'
+    blue:    '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan:    '0x8FBCBB'
+    white:   '0xECEFF4'
+
   # Cursor colors
   #
   # Colors which should be used to draw the terminal cursor.

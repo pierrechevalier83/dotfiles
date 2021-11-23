@@ -49,20 +49,41 @@ smart_borders on
 set $theme_alpha DD
 set $inactive_alpha AA
 
-set $bg_neutral "#002b36$theme_alpha"
-set $bg_active1 "#073642$theme_alpha"
-set $bg_active2 "#002b36$inactive_alpha"
-set $text_color "#eee8d5"
-set $bg_urgent "#eee8d5$theme_alpha"
-set $text_color_urgent "#073642$theme_alpha"
-set $border_focused "#268bd2$theme_alpha"
+# polar night
+set $nord0 "#2E3440"
+set $nord1 "#3B4252"
+set $nord2 "#434C5E"
+set $nord3 "#4C566A"
+# snow storm
+set $nord4 "#D8DEE9"
+set $nord5 "#E5E9F0"
+set $nord6 "#ECEFF4"
+# frost
+set $nord7 "#8FBCBB"
+set $nord8 "#88C0D0"
+set $nord9 "#81A1C1"
+set $nord10 "#5E81AC"
+# aurora
+set $nord11 "#BF616A"
+set $nord12 "#D08770"
+set $nord13 "#EBCB8B"
+set $nord14 "#A3BE8C"
+set $nord15 "#B48EAD"
 
-# border, background, text, indicator, child border
-client.unfocused $bg_active2 $bg_active2 "$text_color$inactive_alpha" $bg_neutral $bg_active2
-client.focused $border_focused $bg_neutral $text_color $bg_neutral $border_focused
-client.focused_inactive $bg_neutral $bg_neutral $text_color $bg_neutral $bg_active1
-client.urgent $bg_urgent $bg_urgent $text_color_urgent $bg_neutral $bg_urgent
+set $bg_neutral "$nord0$theme_alpha"
+set $bg_active1 "$nord1$theme_alpha"
+set $bg_active2 "$nord2$inactive_alpha"
+set $text_color "$nord4"
+set $bg_urgent "$nord11$theme_alpha"
+set $text_color_urgent "$nord6$theme_alpha"
+set $border_focused "$nord8$theme_alpha"
 
+## Window colors
+#                       border,         background, text,              indicator,  child border
+client.unfocused        $bg_active2     $bg_active2 $text_color        $bg_neutral $bg_active2
+client.focused          $border_focused $bg_neutral $text_color        $bg_neutral $border_focused
+client.focused_inactive $bg_neutral     $bg_neutral $text_color        $bg_neutral $bg_active1
+client.urgent           $bg_urgent      $bg_urgent  $text_color_urgent $bg_neutral $bg_urgent
 
 ### Output configuration
 #
@@ -329,30 +350,6 @@ bindsym $mod+n mode "window manager"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-#set $bg_neutral "#002b36$theme_alpha"
-#set $bg_active1 "#073642$theme_alpha"
-#set $bg_active2 "#002b36$inactive_alpha"
-#set $text_color "#eee8d5"
-#set $bg_urgent "#eee8d5$theme_alpha"
-#set $text_color_urgent "#073642$theme_alpha"
-#set $border_focused "#268bd2$theme_alpha"
-set $base03    #002b36
-set $base02    #073642
-set $base01    #586e75
-set $base00    #657b83
-set $base0     #839496
-set $base1     #93a1a1
-set $base2     #eee8d5
-set $base3     #fdf6e3
-set $yellow    #b58900
-set $orange    #cb4b16
-set $red       #dc322f
-set $magenta   #d33682
-set $violet    #6c71c4
-set $blue      #268bd2
-set $cyan      #2aa198
-set $green     #859900
-
 bar {
     height 20
     font Hack Nerd Font 12
@@ -363,11 +360,11 @@ bar {
         separator $border_focused
         background $bg_neutral
         statusline #dddddd
-		#                 border          background      text
-        focused_workspace $blue$theme_alpha $blue$theme_alpha $text_color
-        active_workspace $blue$theme_alpha $bg_active1 $text_color
-        inactive_workspace $bg_neutral $bg_neutral $text_color
-        urgent_workspace $orange$theme_alpha $orange$theme_alpha $text_color
+		#                  border               background         text
+        focused_workspace  $nord8$theme_alpha  $nord10$theme_alpha  $text_color
+        active_workspace   $nord8$theme_alpha  $bg_active1         $text_color
+        inactive_workspace $bg_neutral         $bg_neutral         $text_color
+        urgent_workspace   $nord12$theme_alpha $nord12$theme_alpha $text_color
     }
 }
 
