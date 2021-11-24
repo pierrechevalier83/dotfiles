@@ -39,11 +39,12 @@
 ".pdf" = ""
 "spotify" = ""
 "gnome" = ""
-"discord" = "ﭮ"
+"discord" = ""
 "bitwarden" = ""
 "steam" = ""
 "snapper" = ""
 "helvum" = ""
+"code" = "﬏"
 
 [other]
 "fallback_icon" = "🤨"
