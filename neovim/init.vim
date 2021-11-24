@@ -10,7 +10,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'iCyMind/NeoSolarized'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " general settings
@@ -36,12 +36,12 @@ set background=dark
 set termguicolors
 filetype plugin on
 
-colorscheme NeoSolarized
+colorscheme nord
 hi Normal guibg=NONE ctermbg=NONE
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme="solarized"
+let g:airline_theme="nord"
 
 " rust
 let g:rustfmt_autosave = 1

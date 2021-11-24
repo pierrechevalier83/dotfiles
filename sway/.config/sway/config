@@ -11,7 +11,7 @@ exec --no-startup-id autotiling-rs
 exec --no-startup-id ~/.cargo/bin/syngestures
 exec --no-startup-id ydotoold
 exec --no-startup-id dunst
-
+exec /usr/share/sway/scripts/inactive-windows-transparency.py --opacity 0.95
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -43,11 +43,13 @@ set $menu FZF_DEFAULT_OPTS='--height 100% --reverse --border' alacritty -t menu 
 for_window [app_id="gthumb"] floating enable
 for_window [app_id="gnome-calculator"] floating enable
 
-default_border pixel 1
+default_border pixel 3px
+gaps inner 3px
+gaps outer 3px
 smart_borders on
 
-set $theme_alpha DD
-set $inactive_alpha AA
+set $theme_alpha FF
+set $inactive_alpha FF
 
 # polar night
 set $nord0 "#2E3440"
@@ -80,7 +82,7 @@ set $border_focused "$nord8$theme_alpha"
 
 ## Window colors
 #                       border,         background, text,              indicator,  child border
-client.unfocused        $bg_active2     $bg_active2 $text_color        $bg_neutral $bg_active2
+client.unfocused        $bg_neutral     $nord0$inactive_alpha $text_color        $bg_neutral $bg_active1
 client.focused          $border_focused $bg_neutral $text_color        $bg_neutral $border_focused
 client.focused_inactive $bg_neutral     $bg_neutral $text_color        $bg_neutral $bg_active1
 client.urgent           $bg_urgent      $bg_urgent  $text_color_urgent $bg_neutral $bg_urgent
@@ -358,13 +360,13 @@ bar {
 	pango_markup disabled
 	colors {
         separator $border_focused
-        background $bg_neutral
+        background $nord0
         statusline #dddddd
-		#                  border               background         text
-        focused_workspace  $nord8$theme_alpha  $nord10$theme_alpha  $text_color
-        active_workspace   $nord8$theme_alpha  $bg_active1         $text_color
-        inactive_workspace $bg_neutral         $bg_neutral         $text_color
-        urgent_workspace   $nord12$theme_alpha $nord12$theme_alpha $text_color
+		#                  border    background   text
+        focused_workspace  $nord8    $nord10      $text_color
+        active_workspace   $nord8    $bg_active1  $text_color
+        inactive_workspace $nord2    $nord0       $text_color
+        urgent_workspace   $nord12   $nord12      $text_color
     }
 }
 
