@@ -248,8 +248,8 @@ input type:keyboard {
     bindsym ctrl+alt+0 workspace number 0
     bindsym ctrl+alt+left workspace prev
     bindsym ctrl+alt+right workspace next
-    bindsym ctrl+alt+up workspace prev
-    bindsym ctrl+alt+down workspace next
+    bindsym ctrl+alt+up exec "~/.config/sway/traverse_workspace.sh prev"
+    bindsym ctrl+alt+down exec "~/.config/sway/traverse_workspace.sh next"
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
