@@ -43,13 +43,15 @@ set $menu FZF_DEFAULT_OPTS='--height 100% --reverse --border' alacritty -t menu 
 for_window [app_id="gthumb"] floating enable
 for_window [app_id="gnome-calculator"] floating enable
 
-default_border pixel 3px
-gaps inner 3px
-gaps outer 3px
+default_border pixel 1px
+gaps inner 0px
+gaps outer 0px
 smart_borders on
 
 set $theme_alpha FF
 set $inactive_alpha FF
+
+# [Nord color theme](https://nordtheme.com)
 
 # polar night
 set $nord0 "#2E3440"
@@ -82,9 +84,9 @@ set $border_focused "$nord8$theme_alpha"
 
 ## Window colors
 #                       border,         background, text,              indicator,  child border
-client.unfocused        $bg_neutral     $nord0$inactive_alpha $text_color        $bg_neutral $bg_active1
-client.focused          $border_focused $bg_neutral $text_color        $bg_neutral $border_focused
-client.focused_inactive $bg_neutral     $bg_neutral $text_color        $bg_neutral $bg_active1
+client.unfocused        $bg_neutral     $nord0      $text_color        $nord1      $nord1
+client.focused          $border_focused $bg_neutral $text_color        $nord13     $border_focused
+client.focused_inactive $bg_neutral     $bg_neutral $text_color        $nord1      $nord1
 client.urgent           $bg_urgent      $bg_urgent  $text_color_urgent $bg_neutral $bg_urgent
 
 ### Output configuration
