@@ -159,7 +159,10 @@ input type:keyboard {
     # Exit sway
     bindsym $mod+Shift+q exec "swaymsg exit"
 
-    # Start your launcher
+    # Reload sway
+    bindsym $mod+Shift+r exec "swaymsg reload"
+
+	# Start your launcher
     bindsym $mod+p exec $menu
 
     # Lock your screen
@@ -355,21 +358,7 @@ bindsym $mod+n mode "window manager"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    height 20
-    font Hack Nerd Font 12
-    position top
-    status_command i3status-rs
-	pango_markup disabled
-	colors {
-        separator $border_focused
-        background $nord0
-        statusline #dddddd
-		#                  border    background   text
-        focused_workspace  $nord8    $nord10      $text_color
-        active_workspace   $nord8    $bg_active1  $text_color
-        inactive_workspace $nord2    $nord0       $text_color
-        urgent_workspace   $nord12   $nord12      $text_color
-    }
+	swaybar_command waybar
 }
 
 #

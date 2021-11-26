@@ -1,54 +1,77 @@
+/* Colors (Nord) */
+
+/* polar night */
+@define-color nord0 #2E3440;
+@define-color nord1 #3B4252;
+@define-color nord2 #434C5E;
+@define-color nord3 #4C566A;
+/* snow storm */
+@define-color nord4 #D8DEE9;
+@define-color nord5 #E5E9F0;
+@define-color nord6 #ECEFF4;
+/* frost */
+@define-color nord7 #8FBCBB;
+@define-color nord8 #88C0D0;
+@define-color nord9 #81A1C1;
+@define-color nord10 #5E81AC;
+/* aurora */
+@define-color nord11 #BF616A;
+@define-color nord12 #D08770;
+@define-color nord13 #EBCB8B;
+@define-color nord14 #A3BE8C;
+@define-color nord15 #B48EAD;
+
 * {
-    border-radius: 0;
-    font-family: "Hack Nerd Font Mono", Roboto, Helvetica, Arial, sans-serif;
+    border-radius: 3px;
+    font-family: "Hack Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: #002b36;
-    border-bottom: 3px solid #002b36;
-    color: #fdf6e3;
+    background-color: @nord1;
+    border-bottom: 0px solid @nord0;
+    color: @nord6;
     transition-property: background-color;
     transition-duration: .2s;
-    opacity: 0.8;
+    opacity: 1.0;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0.8;
 }
 
 window#waybar.empty {
-    background-color: transparent;
+    opacity: 0.9;
     border-bottom: transparent;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #fdf6e3;
-    border-bottom: 3px solid transparent;
+    padding: 0 10px;
+	margin: 0 1px;
+    background: @nord2;
+    color: @nord6;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: #586e75;
+    background: @nord3;
+    border-bottom: 1px solid @nord6;
     box-shadow: inherit;
-    border-bottom: 3px solid #d33682;
 }
 
 #workspaces button.focused {
-    background-color: #2aa198;
-    border-bottom: 3px solid #fdf6e3;
+    background-color: @nord8;
+    border-bottom: 1px solid @nord6;
+	color: @nord2;
 }
 
 #workspaces button.urgent {
-    background-color: #d33682;
+    background-color: @nord11;
 }
 
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #fdf6e3;
+    background-color: @nord0;
 }
 
 #clock,
@@ -64,34 +87,33 @@ window#waybar.empty {
 #mode,
 #idle_inhibitor {
     padding: 0 10px;
-    margin: 0 4px;
+    margin: 0 01px;
     color: #fdf6e3;
 }
 
 #clock {
-    background-color: #6c71c4;
+    background-color: @nord15;
+	color: @nord0;
 }
 
 #battery {
-    background-color: #fdf6e3;
-    color: #002b36;
+    background-color: @nord13;
+	color: @nord0;
 }
 
 #battery.charging {
-    color: #fdf6e3;
-    background-color: #26A65B;
+    background-color: @nord14;
+	color: @nord0;
 }
 
 @keyframes blink {
     to {
-        background-color: #fdf6e3;
-        color: #002b36;
+        background-color: @nord12;
     }
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #fdf6e3;
+    background-color: @nord11;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -103,13 +125,19 @@ label:focus {
     background-color: #002b36;
 }
 
-#cpu {
-    background-color: #859900;
-    color: #002b36;
+#temperature {
+    background-color: @nord11;
+	color: @nord0;
 }
 
 #memory {
-    background-color: #d33682;
+    background-color: @nord12;
+	color: @nord0;
+}
+
+#cpu {
+    background-color: @nord13;
+	color: @nord0;
 }
 
 #backlight {
@@ -117,21 +145,23 @@ label:focus {
 }
 
 #network {
-    background-color: #268bd2;
+    background-color: @nord8;
+	color: @nord0;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: @nord4;
+	color: @nord0;
 }
 
 #pulseaudio {
-    background-color: #b58900;
-    color: #002b36;
+    background-color: @nord14;
+	color: @nord0;
 }
 
 #pulseaudio.muted {
-    background-color: #2aa198;
-    color: #2a5c45;
+    background-color: @nord4;
+	color: @nord0;
 }
 
 #custom-media {
@@ -146,10 +176,6 @@ label:focus {
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #b58900;
 }
 
 #temperature.critical {
