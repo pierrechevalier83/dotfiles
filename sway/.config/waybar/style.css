@@ -22,15 +22,16 @@
 @define-color nord15 #B48EAD;
 
 * {
-    border-radius: 3px;
+    border-radius: 5px;
     font-family: "Hack Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
     min-height: 0;
+    border-bottom: transparent;
 }
 
 window#waybar {
-    background-color: @nord1;
-    border-bottom: 0px solid @nord0;
+    background-color: @nord0;
+    border-bottom: 1px solid @nord1;
     color: @nord6;
     transition-property: background-color;
     transition-duration: .2s;
@@ -42,8 +43,6 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-    opacity: 0.9;
-    border-bottom: transparent;
 }
 
 #workspaces button {
@@ -51,6 +50,7 @@ window#waybar.empty {
 	margin: 0 1px;
     background: @nord2;
     color: @nord6;
+    border-bottom: transparent;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -68,6 +68,7 @@ window#waybar.empty {
 
 #workspaces button.urgent {
     background-color: @nord11;
+    border-bottom: transparent;
 }
 
 #mode {
@@ -141,7 +142,8 @@ label:focus {
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: @nord15;
+	color: @nord0;
 }
 
 #network {
