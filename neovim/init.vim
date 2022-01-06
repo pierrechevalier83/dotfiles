@@ -6,17 +6,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neovim/nvim-lspconfig'
 
 " Completion framework
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
 
 " LSP completion source for nvim-cmp
-Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
 
 " Snippet completion source for nvim-cmp
-Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main' }
 
 " Other usefull completion sources
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path', { 'branch': 'main' }
+Plug 'hrsh7th/cmp-buffer', { 'branch': 'main' }
 
 " See hrsh7th's other plugins for more completion sources!
 
@@ -180,7 +180,7 @@ EOF
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
 " Show diagnostic popup on cursor hold
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+autocmd CursorHold * lua vim.diagnostic.open_float()
 
 " have a fixed column for the diagnostics to appear in
 " this removes the jitter when warnings/errors flow in
