@@ -44,6 +44,19 @@ setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
 
+# Use ctrl-z to quickly go in and out of neovim
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # Aliases
 # sudo pacman -S exa
 alias ls=exa
