@@ -1,0 +1,11 @@
+[Unit]
+Description=Workspaces with style!
+Documentation=https://github.com/pierrechevalier83/workstyle
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/workstyle
+
+[Install]
+WantedBy=sway-session.target

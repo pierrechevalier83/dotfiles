@@ -6,8 +6,11 @@
 
 ### Startup application
 #
-exec --no-startup-id workstyle &> /tmp/workstyle.log
-exec --no-startup-id autotiling-rs
+# Recommendation:
+# systemctl --user enable --now workstyle
+# systemctl --user enable --now autotiling
+exec systemctl start workstyle 
+exec systemctl start autotiling-rs
 exec --no-startup-id ~/.cargo/bin/syngestures
 exec --no-startup-id ydotoold
 exec --no-startup-id dunst
@@ -200,26 +203,18 @@ input type:keyboard {
 # Moving around:
 #
     # Move your focus around
-#    bindsym $mod+$left focus left
-#    bindsym $mod+$down focus down
-#    bindsym $mod+$up focus up
-#    bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym alt+Left focus left
     bindsym alt+Down focus down
     bindsym alt+Up focus up
     bindsym alt+Right focus right
 
-    # Move the focused window with the same, but add Shift
-#    bindsym $mod+Shift+$left move left
-#    bindsym $mod+Shift+$down move down
-#    bindsym $mod+Shift+$up move up
-#    bindsym $mod+Shift+$right move right
+    # Move the focused window with the same, but add $mod
     # Ditto, with arrow keys
-    bindsym alt+Shift+Left move left
-    bindsym alt+Shift+Down move down
-    bindsym alt+Shift+Up move up
-    bindsym alt+Shift+Right move right
+    bindsym alt+$mod+Left move left
+    bindsym alt+$mod+Down move down
+    bindsym alt+$mod+Up move up
+    bindsym alt+$mod+Right move right
 #
 # Workspaces:
 #
@@ -234,47 +229,39 @@ input type:keyboard {
     bindsym $mod+6 workspace number 6
     bindsym $mod+7 workspace number 7
     bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9	
+    bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 0
-    bindsym ctrl+alt+1 workspace number 1
-    bindsym ctrl+alt+2 workspace number 2
-    bindsym ctrl+alt+3 workspace number 3
-    bindsym ctrl+alt+4 workspace number 4
-    bindsym ctrl+alt+5 workspace number 5
-    bindsym ctrl+alt+6 workspace number 6
-    bindsym ctrl+alt+7 workspace number 7
-    bindsym ctrl+alt+8 workspace number 8
-    bindsym ctrl+alt+9 workspace number 9
-    bindsym ctrl+alt+0 workspace number 0
-    bindsym ctrl+alt+left workspace prev
-    bindsym ctrl+alt+right workspace next
-    bindsym ctrl+alt+up exec "~/.config/sway/traverse_workspace.sh prev"
-    bindsym ctrl+alt+down exec "~/.config/sway/traverse_workspace.sh next"
+	# ctrl + alt: workspace nav
+    bindsym ctrl+alt+left        workspace prev_on_output
+    bindsym ctrl+alt+right       workspace next_on_output
+    bindsym ctrl+alt+up          exec "~/Documents/code/swayspace/target/release/swayspace move-focus-to workspace prev --dynamic"
+    bindsym ctrl+alt+down        exec "~/Documents/code/swayspace/target/release/swayspace move-focus-to workspace next --dynamic"
+	# shift: output
+    bindsym ctrl+alt+Shift+left  exec "~/Documents/code/swayspace/target/release/swayspace move-focus-to output prev"
+    bindsym ctrl+alt+Shift+right exec "~/Documents/code/swayspace/target/release/swayspace move-focus-to output next"
+    bindsym ctrl+alt+Shift+up    exec "~/Documents/code/swayspace/target/release/swayspace move-focus-to output prev"
+    bindsym ctrl+alt+Shift+down  exec "~/Documents/code/swayspace/target/release/swayspace move-focus-to output next"
+    # gui: move container
+	bindsym ctrl+alt+$mod+left        move container to workspace prev_on_output; workspace prev_on_output
+	bindsym ctrl+alt+$mod+right       move container to workspace next_on_output; workspace next_on_output
+    bindsym ctrl+alt+$mod+up          exec "~/Documents/code/swayspace/target/release/swayspace move-container-to workspace prev --dynamic"
+    bindsym ctrl+alt+$mod+down        exec "~/Documents/code/swayspace/target/release/swayspace move-container-to workspace next --dynamic"
+	# shift: output
+    bindsym ctrl+alt+$mod+Shift+left  exec "~/Documents/code/swayspace/target/release/swayspace move-container-to output prev"
+    bindsym ctrl+alt+$mod+Shift+right exec "~/Documents/code/swayspace/target/release/swayspace move-container-to output next"
+    bindsym ctrl+alt+$mod+Shift+up    exec "~/Documents/code/swayspace/target/release/swayspace move-container-to output prev"
+    bindsym ctrl+alt+$mod+Shift+down  exec "~/Documents/code/swayspace/target/release/swayspace move-container-to output next"
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4; workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5; workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7; workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 0; workspace number 0
-    bindsym ctrl+alt+Shift+1 move container to workspace number 1; workspace number 1
-    bindsym ctrl+alt+Shift+2 move container to workspace number 2; workspace number 2
-    bindsym ctrl+alt+Shift+3 move container to workspace number 3; workspace number 3
-    bindsym ctrl+alt+Shift+4 move container to workspace number 4; workspace number 4
-    bindsym ctrl+alt+Shift+5 move container to workspace number 5; workspace number 5
-    bindsym ctrl+alt+Shift+6 move container to workspace number 6; workspace number 6
-    bindsym ctrl+alt+Shift+7 move container to workspace number 7; workspace number 7
-    bindsym ctrl+alt+Shift+8 move container to workspace number 8; workspace number 8
-    bindsym ctrl+alt+Shift+9 move container to workspace number 9; workspace number 9
-    bindsym ctrl+alt+Shift+0 move container to workspace number 0; workspace number 0
-    bindsym ctrl+alt+Shift+up move container to workspace prev; workspace prev
-    bindsym ctrl+alt+Shift+down move container to workspace next; workspace next
-    bindsym ctrl+alt+Shift+left move container to workspace prev; workspace prev
-    bindsym ctrl+alt+Shift+right move container to workspace next; workspace next
+    bindsym ctrl+alt+$mod+1 move container to workspace number 1; workspace number 1
+    bindsym ctrl+alt+$mod+2 move container to workspace number 2; workspace number 2
+    bindsym ctrl+alt+$mod+3 move container to workspace number 3; workspace number 3
+    bindsym ctrl+alt+$mod+4 move container to workspace number 4; workspace number 4
+    bindsym ctrl+alt+$mod+5 move container to workspace number 5; workspace number 5
+    bindsym ctrl+alt+$mod+6 move container to workspace number 6; workspace number 6
+    bindsym ctrl+alt+$mod+7 move container to workspace number 7; workspace number 7
+    bindsym ctrl+alt+$mod+8 move container to workspace number 8; workspace number 8
+    bindsym ctrl+alt+$mod+9 move container to workspace number 9; workspace number 9
+    bindsym ctrl+alt+$mod+0 move container to workspace number 0; workspace number 0
 #
 # Layout stuff:
 #
@@ -292,7 +279,9 @@ input type:keyboard {
 
     # Make the current focus fullscreen
     bindsym $mod+Up fullscreen
-    
+	# Toggle the bar away
+	bindsym $mod+Down exec "killall -SIGUSR1 waybar"
+
 	bindsym $mod+f exec $browser
 
     # Toggle the current focus between tiling and floating mode
@@ -400,4 +389,8 @@ bindsym {
 # 'Reload Sway' option will be initially selected instead of the 'Exit Sway' option
 swaynag_command $nag --mode "nag" --mode-default "default" -R
 
-include /etc/sway/config.d/*
+# Don't use the default systemd services
+# include /etc/sway/config.d/*
+# Instead, use my own user services
+# This allows to run workstyle as a service
+exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"

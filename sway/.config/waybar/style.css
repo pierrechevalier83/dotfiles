@@ -22,53 +22,60 @@
 @define-color nord15 #B48EAD;
 
 * {
-    border-radius: 5px;
     font-family: "Hack Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
     min-height: 0;
-    border-bottom: transparent;
+    border-radius: 0px;
 }
 
 window#waybar {
+    padding: 0 0px;
+    margin: 0 0px;
     background-color: @nord0;
     border-bottom: 1px solid @nord1;
     color: @nord6;
     transition-property: background-color;
-    transition-duration: .2s;
+    transition-duration: .1s;
     opacity: 1.0;
 }
 
 window#waybar.hidden {
     opacity: 0.8;
+    margin: 0 0px;
 }
 
 window#waybar.empty {
+    margin: 0 0px;
 }
 
 #workspaces button {
+    border-radius: 5px;
     padding: 0 10px;
-	margin: 0 1px;
-    background: @nord2;
+	margin: 1 0px;
+    background: @nord0;
     color: @nord6;
-    border-bottom: transparent;
+    box-shadow: inherit;
+    border: 0px solid @nord1;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
     background: @nord3;
-    border-bottom: 1px solid @nord6;
+    border: 1px solid @nord9;
     box-shadow: inherit;
 }
 
 #workspaces button.focused {
-    background-color: @nord8;
-    border-bottom: 1px solid @nord6;
-	color: @nord2;
+    background-color: @nord2;
+    border: 1px solid @nord10;
+	color: @nord6;
+    box-shadow: inherit;
 }
 
 #workspaces button.urgent {
     background-color: @nord11;
     border-bottom: transparent;
+    box-shadow: inherit;
 }
 
 #mode {
@@ -77,7 +84,7 @@ window#waybar.empty {
 
 #clock,
 #battery,
-#cpu,
+#cpuE
 #memory,
 #temperature,
 #backlight,
@@ -88,18 +95,25 @@ window#waybar.empty {
 #mode,
 #idle_inhibitor {
     padding: 0 10px;
-    margin: 0 01px;
-    color: #fdf6e3;
+    background-color: @nord8;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #clock {
+    padding: 0 10px;
     background-color: @nord15;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #battery {
+    padding: 0 10px;
     background-color: @nord13;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #battery.charging {
@@ -127,28 +141,43 @@ label:focus {
 }
 
 #temperature {
+    padding: 0 10px;
     background-color: @nord11;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #memory {
+    padding: 0 10px;
     background-color: @nord12;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #cpu {
+    padding: 0 10px;
     background-color: @nord13;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #backlight {
+    padding: 0 10px;
     background-color: @nord15;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #network {
+    padding: 0 10px;
     background-color: @nord8;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #network.disconnected {
@@ -157,8 +186,11 @@ label:focus {
 }
 
 #pulseaudio {
+    padding: 0 10px;
     background-color: @nord14;
 	color: @nord0;
+    border: 0px;
+    border-bottom: 1px solid @nord1;
 }
 
 #pulseaudio.muted {

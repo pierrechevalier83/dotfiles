@@ -1,0 +1,11 @@
+[Unit]
+Description=Alternate between horizontal and vertical tiling automatically.
+Documentation=https://github.com/ammgws/autotiling-rs
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/autotiling-rs
+
+[Install]
+WantedBy=sway-session.target
